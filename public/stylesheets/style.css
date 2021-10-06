@@ -1,8 +1,28 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background: #282a36; */
+  background-color: whitesmoke;
+}
+a {
+  color: firebrick;
+}
+h1 {
+  display: flex;
+  background: whitesmoke;
+  /* max-width: 450px;
+  box-shadow: 2px 4px 5px 4px; */
+}
+nav {
+  display: flex;
+  justify-content: right;
+  max-width: 450px;
+  margin-top: 20px;
+  box-shadow: 2px 4px 5px 4px;
+  text-align: center;
+  background: whitesmoke;
+}
+a {
+  font-size: 14px;
 }
 
-a {
-  color: #00B7FF;
-}
