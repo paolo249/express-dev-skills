@@ -3,8 +3,14 @@ const Skill = require('../models/devSkill');
 
 module.exports = {
   index,
-  show
+  show,
+  new: newdevSkills,
+
 };
+
+function newdevSkills(req, res) {
+  res.render('devSkills/new');
+}
 
 function show(req, res) {
   // Route parameters are accessed via the

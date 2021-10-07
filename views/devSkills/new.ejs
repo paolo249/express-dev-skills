@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<h2>Add Skill</h2>
+
+<!-- the action attr defines the path of the HTTP request -->
+<form action="/devSkills" method="POST">
+  <!-- the name attr determines the name of the property on req.body -->
+  <input type="text" name="devSkill">
+  <button type="submit">ADD Skill</button>
+</form>
+<%- include('../partials/footer') %>

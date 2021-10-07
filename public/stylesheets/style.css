@@ -16,7 +16,7 @@ h1 {
 nav {
   display: flex;
   justify-content: right;
-  max-width: 450px;
+  max-width: 510px;
   margin-top: 20px;
   box-shadow: 2px 4px 5px 4px;
   text-align: center;
