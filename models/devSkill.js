@@ -6,14 +6,33 @@ const devSkills = [
 
     module.exports = {
         getAll,
-        getOne
+        getOne, 
+        create,
+        deleteOne,
+        update
     };
+
+    function update(id, updatedevSkill) {
+      id = parseInt(id);
+      const devSkill = devSkills.find(devSkill => devSkill.id === id);
+      Object.assign(devSkill, updatedevSkill);
+    }
+
+    function deleteOne(id) {
+      id = parseInt(id);
+      const idx = devSkills.findIndex(devSkill => devSkill.id === id);
+      devSkills.splice(idx, 1);
+    }
+
+    function create(devSkill) {
+      devSkills.push(devSkill);
+    }
 
     function getOne(id) {
         id = parseInt(id);
         return devSkills.find(devSkill => devSkill.id === id);
       }
     
-      function getAll() {
+    function getAll() {
         return devSkills;
       }

@@ -5,13 +5,19 @@
     <ul>
       <% devSkills.forEach(function(t) { %>
         <li>
+          <form
+           action="/devSkills/<%= t.id %>?_method=DELETE"
+           method="POST"
+           class="delete-form"
+          >
+          <button type="submit">X</button>
+          </form>
           <a href="/devSkills/<%= t.id %>">
           <%= t.devSkill %>
-          <!-- <%= t.done ? 'done' : 'not done' %> -->
-            </a>
+          </a>
         </li>
-      <% }); %>
-    </ul>
+    <% }); %>
+  </ul>
  
 
 <%- include('../partials/footer') %>

@@ -5,8 +5,33 @@ module.exports = {
   index,
   show,
   new: newdevSkills,
+  create,
+  delete: deletedevSkill, 
+  edit,
+  update
 
 };
+
+function update(req,res) {
+  req.body.done = !!req.body.done; 
+  Skill.update(req.params.id, req.body);
+  res.redirect(`/devSkills/${req.params.id}`);
+}
+
+function edit(req,res) {
+  const devSkill = Skill.getOne(req.params.id);
+  res.render('devSkills/edit', { devSkill });
+}
+
+function deletedevSkill(req, res) {
+  Skill.deleteOne(req.params.deleteskill);
+  res.redirect('/devSkills');
+}
+function create(req, res) {
+  console.log(req.body);
+  Skill.create(req.body);
+  res.redirect('/devSkills');
+}
 
 function newdevSkills(req, res) {
   res.render('devSkills/new');
@@ -20,9 +45,6 @@ function show(req, res) {
 }
 
 function index(req, res) {
-  // Read all of the todos
   const devSkills = Skill.getAll();
-  // Render the todos/index, passing to it
-  // the todos
   res.render('devSkills/index', { devSkills });
 }
